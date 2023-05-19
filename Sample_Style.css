@@ -1,0 +1,46 @@
+body {
+    background-image: linear-gradient(to right, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+.topnav {
+    background-color: #004d7a;
+    overflow: hidden;
+}
+
+
+/* Style the links inside the navigation bar */
+
+.topnav a {
+    float: left;
+    color: #333;
+    text-align: center;
+    padding: 10px 40px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+/* Change the color of links on hover */
+
+.topnav a:hover {
+    background-color: grey;
+    color: grey;
+}
+
+
+/* Add a color to the active/current link */
+
+.topnav a.active {
+    background-color: #008793;
+    color: white;
+}
+
+h2 {
+    color: white;
+    margin-left: 100px;
+    padding-top: 10px;
+}
+
+.container2 {
+    background-color: #333;
+}

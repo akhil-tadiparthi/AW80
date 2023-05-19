@@ -1,0 +1,126 @@
+<!--PREFERENCES SELECTION PAGE
+    LAST UPDATED: 02/27/22-->
+<!DOCTYPE html>
+<link rel="stylesheet" href="Preferences.css">
+<html lang="en">
+<head>
+    <div class="topnav">
+        <a class="active" href="./Home.html">Home</a>
+        <a class="active" href="./signIn.html">Sign In</a>
+        <a class="active" href="./Preferences.html">Preferences</a>
+        <a class="active" href="./Settings.html">Settings</a>
+    </div>
+    <title>Emmeline Nettles</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="./Preferences.js"></script>
+</head>
+<body>
+    <!--Emmeline's code starts here-->
+    <div class="container" id="preferences_card_group">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="card" id="destinations" style="width: 18rem;">
+                        <img class="card-img-top" src="./images/destination_card_img.jpg" alt="Image of Machu Pichu">
+                        <div class="card-body">
+                        <h5 class="card-title">Destinations</h5>
+                        <a href="#" class="btn btn-primary" id="destinations_btn" onclick="grayOut('destinations_btn')">Select</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" id="news" style="width: 18rem;">
+                        <img class="card-img-top" src="./images/news_card_img.jpg" alt="Image of newspapers with the title 'World Business' visible">
+                        <div class="card-body">
+                        <h5 class="card-title">News</h5>
+                        <a href="#" class="btn btn-primary" id="news_btn" onclick="grayOut('news_btn')">Select</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" id="weather" style="width: 18rem;">
+                        <img class="card-img-top" src="./images/weather_card_img.jpg" alt="Image of a snowy scene with bus">
+                        <div class="card-body">
+                        <h5 class="card-title">Weather</h5>
+                        <a href="#" class="btn btn-primary" id="weather_btn" onclick="grayOut('weather_btn')">Select</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="card" id="travel_advisory" style="width: 18rem;">
+                        <img class="card-img-top" src="./images/travel_advisory_card_img.jpg" alt="Image of a green face mask">
+                        <div class="card-body">
+                        <h5 class="card-title">Travel Advisory</h5>
+                        <a href="#" class="btn btn-primary" id="travel_advisory_btn" onclick="grayOut('travel_advisory_btn')">Select</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" id="media" style="width: 18rem;">
+                        <img class="card-img-top" src="./images/media_card_img.jpg" alt="Image of a projector">
+                        <div class="card-body">
+                        <h5 class="card-title">Media</h5>
+                        <a href="#" class="btn btn-primary" id="media_btn" onclick="showMedia(); grayOut('media_btn')">Select</a>
+                        </div>
+                    </div>
+                    <div class="container-fluid" id="media_dd">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" id="film" style="width: 18rem;">
+                                    <img class="card-img-top" src="./images/film_card_img.jpg" alt="Image of a clapper in front of a desert scene">
+                                    <div class="card-body">
+                                    <h5 class="card-title">Film</h5>
+                                    <a href="#" class="btn btn-primary" id="film_btn" onclick="grayOut('film_btn')">Select</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" id="literature" style="width: 18rem;">
+                                    <img class="card-img-top" src="./images/literature_card_img.jpg" alt="Image of a wall of books surrounding a door">
+                                    <div class="card-body">
+                                    <h5 class="card-title">Literature</h5>
+                                    <a href="#" class="btn btn-primary" id="literature_btn" onclick="grayOut('literature_btn')">Select</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" id="music" style="width: 18rem;">
+                                    <img class="card-img-top" src="./images/music_card_img.jpg" alt="Image of a trumpet player">
+                                    <div class="card-body">
+                                    <h5 class="card-title">Music</h5>
+                                    <a href="#" class="btn btn-primary" id="music_btn" onclick="grayOut('music_btn')">Select</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" id="podcast" style="width: 18rem;">
+                                    <img class="card-img-top" src="./images/podcast_card_img.jpg" alt="Image of a microphone">
+                                    <div class="card-body">
+                                    <h5 class="card-title">Podcast</h5>
+                                    <a href="#" class="btn btn-primary" id="podcast_btn" onclick="grayOut('podcast_btn')">Select</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Emmeline's code ends here-->
+    <div class="new">
+        <footer>
+            <div class="container2"></div>
+        </footer>
+    </div>
+</body>
+</html>

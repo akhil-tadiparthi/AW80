@@ -1,0 +1,54 @@
+# ------------------------------------------------------------------------------
+# More resources related to this file:
+# [1] Overview   | https://docs.docker.com/compose/
+# [2] PostgreSQL | https://github.com/docker-library/docs/tree/master/postgres
+# -------------
+#  More resources for your projects:
+# [4] Samples    | https://github.com/docker/awesome-compose
+# [5] Env Vars   | https://docs.docker.com/compose/environment-variables/
+# [6] Secrets    | https://docs.docker.com/engine/swarm/secrets/#use-secrets-in-compose
+# ------------------------------------------------------------------------------
+version: "3.9"
+# This section defines all of our components as "services", each which is
+# itself a docker image [1].
+services:
+  # This section defines our PostgreSQL database [2].
+  # Note that the name `db` also becomes the hostname of the postgres container
+  db:
+    image: "postgres:${POSTGRES_VERSION:-12}"
+    # Environment variables to setup postgres ar stored in a .env file. For 
+    # this lab it is checked into your repo, please note that this is not 
+    # secure, and in production (or your project), you should not commit this 
+    # file to GitHub.
+    env_file: .env
+    expose:
+      - "5432"
+    volumes:
+      - csci-3308-spring22-016-02:/var/lib/postgresql/data  # Binds the docker managed volume 
+                                             # to persist your data.
+      - ./part_b:/app
+  # ------------------------------------------- # This section defines our Node.js image [3].
+  web:
+    image: node:lts
+    user: "node"                                # Use a non-root user node
+    working_dir: /home/node/app                 # with home directory /home/node/app
+    # environment:
+    #   - NODE_ENV=production                   # << Use this when deploying your application,
+    #                                           #   currently we have it off so that changes to
+    #                                           #   *.ejs are visible without restarting docker-compose.
+    ports:
+      - "3000:3000"                           # Here we do need to publish the port for viewing on the host.
+    volumes:
+      - ./:/home/node/app                       # Binds the current directory (containing our source code) into the image,
+        #  so that changes made to the source code on the host
+      #  are reflected witin the container.
+    command: "npm run dev"                      # This will run nodemon so
+      # that changes to server.js will
+    # update in real time.
+
+# This defines our volume(s), which will persist throughout startups.
+# If you want to get rid of a hanging volume, e.g. to test your database init,
+# run `docker-compose rm -v`. Note that this will remove ALL of your data, so
+# be extra sure you've made a stable backup somewhere.
+volumes:
+  csci-3308-spring22-016-02: {}
